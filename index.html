@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Startup Framework — Modern</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+    /* Navbar */
+    .navbar {
+      background: #111;
+      color: #fff;
+      padding: 1rem;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-links a {
+      color: #fff;
+      margin: 0 0.5rem;
+      text-decoration: none;
+    }
+
+    /* Hero */
+    .hero {
+      background: #0e0e0e;
+      padding: 3rem 1rem;
+      text-align: left;
+    }
+    .hero-copy h1 { font-size: 4rem; }
+    .hero-cta { margin-top: 1.5rem; }
+    .btn { padding: 0.6rem 1.2rem; border: none; cursor: pointer; }
+    .btn-primary { background: #007bff; color: #fff; border-radius: 5px; }
+    .btn-secondary { background: #eee; color: #333; border-radius: 5px; margin-left: 0.5rem; }
+
+    /* Features */
+    .features { padding: 3rem 1rem; text-align: center; }
+    .section-title { font-size: 2rem; margin-bottom: 1rem; }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .feature-card {
+      padding: 1.5rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    .feature-card .icon { font-size: 2rem; margin-bottom: 1rem; }
+
+    /* Auth */
+    .auth-section {
+      padding: 3rem 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #080808;
+    }
+    .auth-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      max-width: 900px;
+      width: 100%;
+    }
+    .auth-text {
+      flex: 1;
+      text-align: center;
+    }
+    .auth-card {
+      flex: 1;
+      padding: 2rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fff;
+    }
+    .auth-tabs {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 0.5rem;
+      background: #91bae6;
+      border: none;
+      cursor: pointer;
+    }
+    .tab-btn.active { background: #2e1f5d; color: #fff; }
+    .auth-form { display: none; }
+    .auth-form.active { display: block; }
+    .auth-form input {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+    }
+    .btn-social { margin-top: 0.5rem; width: 100%; padding: 0.5rem; }
+
+    /* Pricing, Team, Contact */
+    .pricing, .team, .contact {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.pricing-card, .member {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 0 auto 1.5rem; 
+  width: 80%;
+}
+
+.member h3, .member p {
+  text-align: center;
+}
+
+    /* Contact Form */
+    .contact-form {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .contact-form input, .contact-form textarea, .budget {
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #111;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    .footer-links a, .footer-meta a { color: #aaa; margin: 0 0.5rem; text-decoration: none; }
+    .footer-top, .footer-links, .footer-bottom { margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <div class="brand-mark">Startup<span class="brand-idx">3</span></div>
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+        <a href="#auth-section">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1>We Create Something New</h1>
+        <div class="hero-cta">
+          <button class="btn btn-primary" id="getStarted">
+            <span aria-hidden="true">►</span> Get Started
+          </button>
+          <a class="btn btn-secondary" href="#features">Free Sample</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-aside"> 
+      <div class="promo-card"> 
+        <h4>Powerful Generator</h4> 
+        <p>Free Figma Sources — Useful Symbol Components — 30 New Feature Pages</p> 
+        <p> Startup Framework gives you complete freedom over your creative process — no limits and absolutely no coding. Build retina ready sites quickly and beautifully. </p>
+        <br> 
+      </div> 
+    </div> 
+  </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="features">
+    <h2 class="section-title">Powerful Generator and Free Figma Sources</h2>
+    <p class="lead">Samples show how to play around using the components.</p>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon"><i class="fa-solid fa-layer-group"></i></div>
+        <h3>30 New Feature Pages</h3>
+        <p>Ready-to-use page samples for quick setups.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon"><i class="fa-solid fa-cubes"></i></div>
+        <h3>Useful Symbol Components</h3>
+        <p>Design tokens and modular elements for Figma and code.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+        <h3>Complex Blocks Included</h3>
+        <p>Prebuilt sections that you can mix and match.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Auth -->
+  <section id="auth-section" class="auth-section">
+    <div class="auth-container">
+      <div class="auth-text">
+        <h1>We solve digital problems with an<br>outstanding creative flare</h1>
+        <p>We have created a new product that will help designers, developers and companies create websites for their startups quickly and easily.</p>
+      </div>
+
+      <div class="auth-card">
+        <div class="auth-tabs">
+          <button class="tab-btn active" data-target="signupForm">Sign Up</button>
+          <button class="tab-btn" data-target="loginForm">Login</button>
+        </div>
+
+        <form id="signupForm" class="auth-form active">
+          <input type="email" placeholder="Your email" required>
+          <input type="password" placeholder="Your password" required>
+          <button type="submit" class="btn-primary">Create an Account</button>
+          <div class="alt-login">or</div>
+          <button type="button" class="btn-social twitter">Login via Twitter</button>
+        </form>
+
+        <form id="loginForm" class="auth-form">
+          <input type="email" placeholder="Your email" required>
+          <input type="password" placeholder="Your password" required>
+          <button type="submit" class="btn-primary">Login</button>
+          <div class="alt-login">or</div>
+          <button type="button" class="btn-social twitter">Login via Twitter</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="pricing">
+    <h2 class="section-title">Plans & Pricing</h2>
+    <div class="pricing-card">
+      <h3>Starter</h3>
+      <div class="price">$9.99</div>
+      <p>2 GB of space • Social integrations • 14 days backups</p>
+    </div>
+    <div class="pricing-card">
+      <h3>Professional</h3>
+      <div class="price">$19.99</div>
+      <p>Client billing • Admin tools • 14 days backups</p>
+    </div>
+    <div class="pricing-card">
+      <h3>Team</h3>
+      <div class="price">$49.99</div>
+      <p>Custom domain • 24/7 support • Remote access</p>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section id="team" class="team">
+    <h2 class="section-title">Startup Crew</h2>
+    <div class="member">
+      <h3>Steven MacAlister</h3>
+      <p class="role">Copywriter</p>
+    </div>
+    <div class="member">
+      <h3>Taylor Simon</h3>
+      <p class="role">Product Manager</p>
+    </div>
+    <div class="member">
+      <h3>Miguel Osborne</h3>
+      <p class="role">Front-end Developer</p>
+    </div>
+    <div class="member">
+      <h3>Colin Timmons</h3>
+      <p class="role">UX Designer</p>
+    </div>
+    <div class="member">
+      <h3>Leah Salomon</h3>
+      <p class="role">UI Designer</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your name" required />
+      <input type="email" placeholder="Your email" required />
+      <textarea placeholder="Your message" rows="5" required></textarea>
+      <select class="budget">
+        <option value="" disabled selected>Budget (optional)</option>
+        <option value="low">Under $500</option>
+        <option value="medium">$500 - $1000</option>
+        <option value="high">Over $1000</option>
+      </select>
+      <label class="send-copy">
+        <input type="checkbox" /> Send me a copy (optional)
+      </label>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">Startup 3</div>
+      <div class="footer-meta">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <div class="footer-socials">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-google-plus-g"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="#">Tour</a>
+      <a href="#">Features</a>
+      <a href="#">Pricing Plans</a>
+      <a href="#">Our Works</a>
+      <a href="#">Brands</a>
+      <a href="#">Contacts</a>
+    </div>
+    <div class="footer-bottom">© 2017 Designmodo. All rights reserved.</div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const $ = (sel) => document.querySelector(sel);
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const tabs = document.querySelectorAll(".tab-btn");
+      const forms = document.querySelectorAll(".auth-form");
+
+      tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+          tabs.forEach(t => t.classList.remove("active"));
+          tab.classList.add("active");
+          forms.forEach(f => f.classList.remove("active"));
+          document.getElementById(tab.dataset.target).classList.add("active");
+        });
+      });
+
+      $("#signupForm")?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("🎉 Account created successfully!");
+        $("#signupForm").reset();
+        document.querySelector('.tab-btn[data-target="loginForm"]').click();
+      });
+
+      $("#loginForm")?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("🔑 Logged in successfully!");
+        $("#loginForm").reset();
+      });
+
+      $("#getStarted")?.addEventListener("click", () => {
+        document.querySelector("#features")?.scrollIntoView({ behavior: "smooth" });
+      });
+
+      document.querySelectorAll(".btn-social.twitter").forEach(btn => {
+        btn.addEventListener("click", () => {
+          alert("🔁 Redirecting to Twitter login (placeholder).");
+        });
+      });
+    });
+  </script>
+</body>
+</html>
